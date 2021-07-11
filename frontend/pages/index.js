@@ -1,7 +1,22 @@
-export default function Home() {
+import Seo from "../components/Seo";
+import dynamic from "next/dynamic";
+import Hero from "../components/Hero";
+
+const Home = () => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+  const Layout = dynamic(() => import("../components/Layout"));
   return (
-    <div>
-      <h1 className="text-4xl">Hello World</h1>
-    </div>
+    <>
+      <Seo title="Home" />
+      <Layout>
+        <div className="container mx-auto">
+          <Hero />
+        </div>
+      </Layout>
+    </>
   );
-}
+};
+
+export default Home;
