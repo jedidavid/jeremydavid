@@ -4,6 +4,7 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     screens: {
+      xs: "400px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -15,16 +16,14 @@ module.exports = {
       flex: {
         sticky: "1 0 auto",
       },
-      colors: {
-        primary: "#143cff",
-        "light-black": "#111111",
+      fontSize: {
+        "8/2xl": "7rem",
       },
     },
     container: {
       padding: "1rem",
     },
     fontFamily: {
-      heading: ["Karla", "sans-serif"],
       body: ["Karla", "sans-serif"],
     },
   },

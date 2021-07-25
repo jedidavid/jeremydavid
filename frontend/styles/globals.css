@@ -7,19 +7,11 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-body font-normal;
+    @apply font-normal;
+    @apply font-body;
   }
   main {
     @apply flex-sticky;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-bold;
   }
 }
 
@@ -38,31 +30,19 @@
   }
 
   .text-transition {
-    @apply hover:text-blue-600 dark:hover:text-blue-600;
+    @apply hover:text-green-500 dark:hover:text-green-500;
   }
 
   .border-transition {
-    @apply hover:border-blue-600 dark:hover:border-blue-600;
+    @apply hover:border-green-500 dark:hover:border-green-500;
   }
 
   .bg-transition {
-    @apply hover:bg-blue-600 dark:hover:bg-blue-600;
+    @apply hover:bg-green-500 dark:hover:bg-green-500;
   }
 
   .img-transition {
-    @apply hover:opacity-75;
-  }
-
-  .link-transition {
-    background: linear-gradient(
-        90deg,
-        currentColor calc(100% / 3),
-        transparent 0 calc(200% / 3),
-        currentColor 0
-      )
-      var(--d, 0%) 100% /300% 4px no-repeat;
-    transition: 0.5s;
-    transition: 0.5s;
+    @apply transition duration-700 ease-in-out hover:transform hover:scale-105 hover:opacity-75;
   }
 
   .link-transition:hover {
@@ -71,6 +51,10 @@
 
   .title-decorator::before {
     content: "";
-    @apply absolute bottom-0 left-0 h-1 w-full bg-blue-600;
+    @apply absolute bottom-0 left-0 h-1 w-full bg-green-500;
+  }
+
+  .skill {
+    @apply py-2 px-4 mr-2 mb-2 sm:text-2xl text-lg font-bold border border-gray-200 rounded-full;
   }
 }
