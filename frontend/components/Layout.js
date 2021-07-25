@@ -1,12 +1,17 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, global }) => {
   return (
     <div className="page">
-      <Header />
+      <Header cv={global.cv} />
       <main>{children}</main>
-      <Footer />
+      <Footer
+        email={global.email}
+        phone={global.phone}
+        linkedin={global.linkedin}
+        github={global.github}
+      />
     </div>
   );
 };

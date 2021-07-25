@@ -13,7 +13,7 @@ const ThemeToggle = () => {
       ) : (
         <HiMoon
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-black dark:text-black text-2xl cursor-pointer"
+          className="text-black dark:text-white text-2xl cursor-pointer"
         />
       )}
     </div>

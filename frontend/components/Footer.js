@@ -1,32 +1,34 @@
-import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 const Footer = (props) => {
   return (
     <>
-      <div className="bg-black">
-        <div className="container mx-auto lg:py-48 md:py-36 py-16">
-          <div className="flex flex-col items-center" id="contact">
+      <div>
+        <div className="container mx-auto lg:py-48 md:py-36 py-16 border-t border-gray-200">
+          <div className="flex flex-col items-start" id="contact">
             <div>
-              <p className="text-sm pb-2 text-white">
-                Don't be shy. Say hi! &#128075;
-              </p>
-              <h1 className="text-white lg:text-7xl md:text-5xl sm:text-5xl text-2xl base-transition text-transition link-transition relative">
-                <a href={`mailto:${props.email}`}>jeremydb.david@gmail.com</a>
+              <p className="text-xl pb-2">Send me an email 💌</p>
+              <h1 className="3xl:text-9xl 2xl:text-8/2xl lg:text-7xl md:text-6xl sm:text-5xl xs:text-3xl text-2xl font-bold base-transition text-transition relative">
+                <a href={`mailto:${props.email}`}>{props.email}</a>
               </h1>
             </div>
           </div>
-        </div>
-        <div className="container mx-auto py-4">
-          <div className="flex flex-wrap justify-center">
-            <p className="text-white text-sm sm:order-1 order-2">
-              &copy; 2021 Jeremy David | All Rights Reserved
-            </p>
-            <div className="flex flex-wrap ml-auto space-x-8 sm:order-2 order-1 sm:w-auto w-full justify-center sm:pb-0 pb-4">
+          <div className="flex md:pt-24 pt-12">
+            <div className="flex flex-col space-y-2">
               {props.linkedin ? (
                 <a
                   href={props.linkedin}
-                  className="text-2xl base-transition text-transition"
+                  className="md:text-4xl sm:text-3xl text-xl font-bold base-transition text-transition"
                 >
-                  <FaLinkedinIn />
+                  Linkedin
+                </a>
+              ) : (
+                ""
+              )}
+              {props.github ? (
+                <a
+                  href={props.github}
+                  className="md:text-4xl sm:text-3xl text-xl font-bold base-transition text-transition"
+                >
+                  Github
                 </a>
               ) : (
                 ""
@@ -34,13 +36,18 @@ const Footer = (props) => {
               {props.phone ? (
                 <a
                   href={`tel:${props.phone}`}
-                  className="text-2xl base-transition text-transition"
+                  className="md:text-4xl sm:text-3xl text-xl font-bold base-transition text-transition"
                 >
-                  <FaWhatsapp />
+                  Mobile
                 </a>
               ) : (
                 ""
               )}
+            </div>
+            <div className="ml-auto mt-auto">
+              <p className="text-sm sm:order-1 order-2">
+                &copy; 2021 Jeremy David | All Rights Reserved
+              </p>
             </div>
           </div>
         </div>
