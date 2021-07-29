@@ -15,6 +15,7 @@ const Works = ({ works, global }) => {
           <div className="grid lg:grid-cols-2 grid-cols-1 xl:gap-16 gap-8">
             {works.map((work) => (
               <Card
+                key={work.id}
                 slug={work.slug}
                 imgUrl={work.image}
                 imgAlt={work.image.alt}
