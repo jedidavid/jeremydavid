@@ -6,7 +6,7 @@ const Seo = (props) => {
       <NextSeo
         title={`Jeremy David | ${props.title}`}
         description="Portfolio"
-        canonical="https://www.jeremydavid.dev/"
+        canonical="https://jeremydavid.dev/"
         openGraph={{
           url: props.link,
           title: `Jeremy David | ${props.title}`,
