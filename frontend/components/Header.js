@@ -68,6 +68,7 @@ const Header = (props) => {
                   className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
                   href={getStrapiMedia(props.cv)}
                   download={props.cv.name}
+                  target="_blank"
                 >
                   CV
                 </a>
