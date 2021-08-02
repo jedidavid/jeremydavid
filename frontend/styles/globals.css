@@ -25,6 +25,22 @@
     max-width: calc(100% - 60px);
   }
 
+  .nav-wrapper {
+    @apply relative flex flex-wrap items-center justify-between py-8 mb-3 z-50;
+  }
+
+  .nav-wrapper.active {
+    @apply fixed w-full h-full bg-white dark:bg-black items-start;
+  }
+
+  .nav-holder {
+    @apply container mx-auto flex flex-wrap items-center justify-between;
+  }
+
+  .nav-wrapper.active .nav-holder {
+    @apply items-start h-full;
+  }
+
   .base-transition {
     @apply transition duration-200 ease-in-out;
   }
