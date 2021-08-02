@@ -1,10 +1,11 @@
 import React from "react";
-import ThemeToggle from "./ThemeToggle";
 import { HiMenuAlt4 } from "react-icons/hi";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
+import { getStrapiMedia } from "../lib/media";
+
 const Header = (props) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  console.log(props.cv);
   return (
     <nav className={"nav-wrapper" + (navbarOpen ? " active" : "")}>
       <div className="nav-holder">
@@ -65,7 +66,7 @@ const Header = (props) => {
               {props.cv ? (
                 <a
                   className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
-                  href={props.cv.url}
+                  href={getStrapiMedia(props.cv.url)}
                   download={props.cv.name}
                 >
                   CV
