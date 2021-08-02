@@ -69,6 +69,7 @@ const Header = (props) => {
                   href={getStrapiMedia(props.cv)}
                   download={props.cv.name}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   CV
                 </a>
