@@ -6,8 +6,8 @@ const Header = (props) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   console.log(props.cv);
   return (
-    <nav className="relative flex flex-wrap items-center justify-between py-8 navbar-expand-lg mb-3">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+    <nav className={"nav-wrapper" + (navbarOpen ? " active" : "")}>
+      <div className="nav-holder">
         <div className="w-full relative flex justify-between">
           <Link href="/">
             <a className="leading-none inline-block whitespace-no-wrap base-transition text-transition">
@@ -41,21 +41,21 @@ const Header = (props) => {
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
             <li className="nav-item">
               <Link href="/">
-                <a className="px-4 py-2 flex items-center text-xl font-bold leading-snug hover:opacity-75 base-transition text-transition">
+                <a className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition">
                   Home
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/works">
-                <a className="px-4 py-2 flex items-center text-xl font-bold leading-snug hover:opacity-75 base-transition text-transition">
+                <a className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition">
                   Works
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <a
-                className="px-4 py-2 flex items-center text-xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
+                className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
                 href="#contact"
               >
                 Contact
@@ -64,7 +64,7 @@ const Header = (props) => {
             <li className="nav-item">
               {props.cv ? (
                 <a
-                  className="px-4 py-2 flex items-center text-xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
+                  className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
                   href={props.cv.url}
                   download={props.cv.name}
                 >
