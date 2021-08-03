@@ -24,6 +24,7 @@ const Tech = () => {
             <span className="skill">MySQL</span>
             <span className="skill">NoSQL</span>
             <span className="skill">PHP</span>
+            <span className="skill">Headless CMS</span>
             <span className="skill">Wordpress</span>
             <span className="skill">Shopify</span>
           </div>
