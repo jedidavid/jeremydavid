@@ -10,7 +10,6 @@ const Works = ({ works, global }) => {
     <>
       <Seo title="Works" />
       <Layout global={global}>
-        <div className="container mx-auto"></div>
         <div className="container mx-auto py-16">
           <div className="grid lg:grid-cols-2 grid-cols-1 xl:gap-16 gap-8">
             {works.map((work) => (
