@@ -19,6 +19,9 @@ module.exports = {
       fontSize: {
         "8/2xl": "7rem",
       },
+      colors: {
+        "matte-black": "#151515",
+      },
     },
     container: {
       padding: "1rem",

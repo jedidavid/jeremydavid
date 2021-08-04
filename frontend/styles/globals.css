@@ -30,7 +30,7 @@
   }
 
   .nav-wrapper.active {
-    @apply fixed w-full h-full bg-white dark:bg-black items-start;
+    @apply fixed w-full h-full bg-white dark:bg-matte-black items-start;
   }
 
   .nav-holder {
