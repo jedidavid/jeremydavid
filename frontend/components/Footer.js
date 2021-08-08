@@ -46,7 +46,7 @@ const Footer = (props) => {
             </div>
             <div className="ml-auto mt-auto">
               <p className="text-sm sm:order-1 order-2">
-                &copy; 2021 Jeremy David | All Rights Reserved
+                Jeremy David 🧑🏻‍💻 - <a href={props.sourcecode}>Source Code</a>
               </p>
             </div>
           </div>
