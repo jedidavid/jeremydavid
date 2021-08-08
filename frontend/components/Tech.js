@@ -8,7 +8,9 @@ const Tech = ({ skills }) => {
       </p>
       <div className="flex flex-wrap max-w-7xl w-full">
         {skills.map((skill) => (
-          <span className="skill">{skill.name}</span>
+          <span className="skill" key={skill.id}>
+            {skill.name}
+          </span>
         ))}
       </div>
     </div>
