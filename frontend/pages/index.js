@@ -5,7 +5,7 @@ import Works from "../components/Works";
 import { fetchAPI } from "../lib/api";
 import Tech from "../components/Tech";
 
-const Home = ({ works, global }) => {
+const Home = ({ works, global, skills }) => {
   if (typeof window === "undefined") {
     return null;
   }
@@ -17,7 +17,7 @@ const Home = ({ works, global }) => {
         <div className="container mx-auto">
           <Hero />
           <Works works={works} />
-          <Tech />
+          <Tech skills={skills} />
         </div>
       </Layout>
     </>
@@ -25,13 +25,14 @@ const Home = ({ works, global }) => {
 };
 
 export async function getStaticProps() {
-  const [works, global] = await Promise.all([
+  const [works, global, skills] = await Promise.all([
     fetchAPI("/works?featured=true&_limit=4"),
     fetchAPI("/global"),
+    fetchAPI("/skills"),
   ]);
 
   return {
-    props: { works, global },
+    props: { works, global, skills },
     revalidate: 1,
   };
 }
