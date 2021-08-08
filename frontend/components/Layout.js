@@ -11,6 +11,7 @@ const Layout = ({ children, global }) => {
         phone={global.phone}
         linkedin={global.linkedin}
         github={global.github}
+        sourcecode={global.sourcecode}
       />
     </div>
   );
