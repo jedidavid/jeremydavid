@@ -46,7 +46,13 @@ const Footer = (props) => {
             </div>
             <div className="ml-auto mt-auto">
               <p className="text-sm sm:order-1 order-2">
-                Jeremy David 🧑🏻‍💻 - <a href={props.sourcecode}>Source Code</a>
+                Jeremy David 🧑🏻‍💻 -{" "}
+                <a
+                  href={props.sourcecode}
+                  className="base-transition text-transition cursor-pointer"
+                >
+                  Source Code
+                </a>
               </p>
             </div>
           </div>
