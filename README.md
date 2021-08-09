@@ -28,7 +28,7 @@
    yarn dev || npm run dev # frontend folder
    ```
    ```sh
-   yarn develop || npm run # develop backend folder
+   yarn develop || npm run develop # backend folder
    ```
 
 ## License
