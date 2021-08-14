@@ -1,5 +1,3 @@
-import React from "react";
-
 const Hero = () => {
   return (
     <div className="xl:pt-60 md:pt-44 pt-20 xl:pb-96 md:pb-72 pb-40">

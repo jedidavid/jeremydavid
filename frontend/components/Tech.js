@@ -1,5 +1,3 @@
-import React from "react";
-
 const Tech = ({ skills }) => {
   return (
     <div className="sm:py-32 py-20">
