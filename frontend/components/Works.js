@@ -12,7 +12,7 @@ const Works = ({ works }) => {
             <Card
               slug={work.slug}
               imgUrl={work.image}
-              imgAlt={work.image.alt}
+              imgAlt={work.image.alternativeText || work.title}
               title={work.title}
               link={work.link}
               github={work.github}
