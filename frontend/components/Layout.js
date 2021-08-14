@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children, global }) => {
   return (
-    <div className="page">
+    <>
       <Header cv={global.cv} />
       <main>{children}</main>
       <Footer
@@ -13,7 +13,7 @@ const Layout = ({ children, global }) => {
         github={global.github}
         sourcecode={global.sourcecode}
       />
-    </div>
+    </>
   );
 };
 

@@ -10,16 +10,9 @@
     @apply font-normal;
     @apply font-body;
   }
-  main {
-    @apply flex-sticky;
-  }
 }
 
 @layer components {
-  .page {
-    @apply flex flex-col min-h-screen;
-  }
-
   .custom-container {
     @apply w-full mx-auto;
     max-width: calc(100% - 60px);
