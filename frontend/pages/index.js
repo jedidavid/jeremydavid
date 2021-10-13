@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Works from "../components/Works";
 import { fetchAPI } from "../lib/api";
 import Tech from "../components/Tech";
+import Reveal from "../components/Reveal";
 
 const Home = ({ works, global, skills }) => {
   if (typeof window === "undefined") {
@@ -15,9 +16,15 @@ const Home = ({ works, global, skills }) => {
       <Seo title="Home" />
       <Layout global={global}>
         <div className="container mx-auto">
-          <Hero />
-          <Works works={works} />
-          <Tech skills={skills} />
+          <Reveal>
+            <Hero />
+          </Reveal>
+          <Reveal>
+            <Works works={works} />
+          </Reveal>
+          <Reveal>
+            <Tech skills={skills} />
+          </Reveal>
         </div>
       </Layout>
     </>
