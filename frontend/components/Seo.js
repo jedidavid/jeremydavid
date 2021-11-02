@@ -8,6 +8,7 @@ const Seo = (props) => {
         description="Portfolio"
         canonical="https://jeremydavid.dev/"
         openGraph={{
+          type: "website",
           url: props.link,
           title: `Jeremy David | ${props.title}`,
           description: props.desc,
@@ -17,7 +18,7 @@ const Seo = (props) => {
               url: "https://admin.jeremydavid.dev/uploads/seo_ad854856cd.jpg",
               width: 700,
               height: 700,
-              alt: "",
+              alt: "Logo",
             },
           ],
         }}
