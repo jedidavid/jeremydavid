@@ -1,13 +1,45 @@
-import React from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
+import React, { useRef } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { getStrapiMedia } from "../lib/media";
+import MenuToggle from "./MenuToggle";
+import { motion, useCycle } from "framer-motion";
+import useDimensions from "../lib/use-dimensions";
+import MenuItem from "./MenuItem";
 
 const Header = (props) => {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [isNavbarOpen, setNavbarOpen] = useCycle(false, true);
+  const containerRef = useRef(false);
+  const { height } = useDimensions(containerRef);
+
+  const menuOpenVariants = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+  };
+
+  const childVariants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  };
+
   return (
-    <nav className={"nav-wrapper" + (navbarOpen ? " active" : "")}>
+    <motion.nav
+      className="py-8"
+      initial={false}
+      animate={isNavbarOpen ? "open" : "closed"}
+      custom={height}
+      ref={containerRef}
+    >
       <div className="nav-holder">
         <div className="w-full relative flex justify-between">
           <Link href="/">
@@ -25,47 +57,38 @@ const Header = (props) => {
               </div>
             </a>
           </Link>
-          <button
-            className="block lg:hidden cursor-pointer text-4xl leading-none outline-none focus:outline-none text-black dark:text-white"
-            type="button"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            <HiMenuAlt4 />
-          </button>
+          <MenuToggle toggle={() => setNavbarOpen(!isNavbarOpen)} />
         </div>
-        <div
+        <motion.div
           className={
             "lg:flex flex-grow items-center lg:justify-items-auto justify-center" +
-            (navbarOpen ? " flex" : " hidden")
+            (isNavbarOpen ? " flex nav-open" : " hidden")
           }
+          variants={menuOpenVariants}
         >
-          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
-            <li className="nav-item">
+          <motion.ul
+            className="flex flex-col lg:flex-row list-none lg:ml-auto items-center"
+            variants={childVariants}
+          >
+            <MenuItem>
               <Link href="/">
-                <a className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition">
-                  Home
-                </a>
+                <a className="nav-link">Home</a>
               </Link>
-            </li>
-            <li className="nav-item">
+            </MenuItem>
+            <MenuItem>
               <Link href="/works">
-                <a className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition">
-                  Works
-                </a>
+                <a className="nav-link">Works</a>
               </Link>
-            </li>
-            <li className="nav-item">
-              <a
-                className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
-                href="#contact"
-              >
+            </MenuItem>
+            <MenuItem>
+              <a className="nav-link" href="#contact">
                 Contact
               </a>
-            </li>
-            <li className="nav-item">
-              {props.cv ? (
+            </MenuItem>
+            {props.cv ? (
+              <MenuItem>
                 <a
-                  className="px-4 py-2 flex items-center lg:text-xl text-4xl font-bold leading-snug hover:opacity-75 base-transition text-transition"
+                  className="nav-link"
                   href={getStrapiMedia(props.cv)}
                   download={props.cv.name}
                   target="_blank"
@@ -73,19 +96,19 @@ const Header = (props) => {
                 >
                   CV
                 </a>
-              ) : (
-                ""
-              )}
-            </li>
-            <li className="nav-item">
+              </MenuItem>
+            ) : (
+              ""
+            )}
+            <MenuItem>
               <span className="px-4 py-2 flex items-center leading-snug">
                 <ThemeToggle />
               </span>
-            </li>
-          </ul>
-        </div>
+            </MenuItem>
+          </motion.ul>
+        </motion.div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
