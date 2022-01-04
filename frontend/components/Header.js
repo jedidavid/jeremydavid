@@ -85,7 +85,7 @@ const Header = (props) => {
                 Contact
               </a>
             </MenuItem>
-            {props.cv ? (
+            {props.cv && (
               <MenuItem>
                 <a
                   className="nav-link"
@@ -97,8 +97,6 @@ const Header = (props) => {
                   CV
                 </a>
               </MenuItem>
-            ) : (
-              ""
             )}
             <MenuItem>
               <span className="px-4 py-2 flex items-center leading-snug">

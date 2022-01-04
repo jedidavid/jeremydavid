@@ -12,35 +12,31 @@ const Footer = (props) => {
         </div>
         <div className="flex md:pt-24 pt-12">
           <div className="flex flex-col space-y-2">
-            {props.linkedin ? (
+            {props.linkedin && (
               <a
                 href={props.linkedin}
                 className="md:text-4xl sm:text-3xl text-xl font-bold base-transition text-transition"
               >
                 Linkedin
               </a>
-            ) : (
-              ""
             )}
-            {props.github ? (
+
+            {props.github && (
               <a
                 href={props.github}
                 className="md:text-4xl sm:text-3xl text-xl font-bold base-transition text-transition"
               >
                 Github
               </a>
-            ) : (
-              ""
             )}
-            {props.phone ? (
+
+            {props.phone && (
               <a
                 href={`tel:${props.phone}`}
                 className="md:text-4xl sm:text-3xl text-xl font-bold base-transition text-transition"
               >
                 Mobile
               </a>
-            ) : (
-              ""
             )}
           </div>
           <div className="ml-auto mt-auto">
