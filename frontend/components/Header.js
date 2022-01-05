@@ -61,7 +61,7 @@ const Header = (props) => {
         </div>
         <motion.div
           className={
-            "lg:flex flex-grow items-center lg:justify-items-auto justify-center" +
+            "lg:flex flex-grow items-center lg:justify-items-auto justify-center bg:white dark:bg-matte-black" +
             (isNavbarOpen ? " flex nav-open" : " hidden")
           }
           variants={menuOpenVariants}
