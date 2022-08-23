@@ -3,4 +3,5 @@ module.exports = {
   images: {
     domains: ["localhost", "admin.jeremydavid.dev"],
   },
+  swcMinify: true,
 };
